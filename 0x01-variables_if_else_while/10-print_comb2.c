@@ -13,9 +13,16 @@ int main(void)
 		do {
 			putchar('0' + j);
 			putchar('0' + i);
-			putchar(',');
-			putchar(' ');
-			i++;
+			if (i == 9 && j == 9)
+			{
+				i++;
+			}
+			else
+			{
+				putchar(',');
+				putchar(' ');
+				i++;
+			}
 		} while (i <= 9);
 		j++;
 	} while (j <= 9);

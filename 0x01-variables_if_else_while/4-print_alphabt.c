@@ -8,15 +8,18 @@ int main(void)
 	char ch = 'a';
 
 	do {
-		switch (ch)
+		if (ch == 'e')
 		{
-			case 'e':
-				ch++;
-			case 'q':
-				ch++;
-			default:
-				putchar(ch);
-				ch++;
+			ch++;
+		}
+		else if (ch == 'q')
+		{
+			ch++;
+		}
+		else
+		{
+			putchar(ch);
+			ch++;
 		}
 	} while (ch <= 'z');
 	putchar('\n');

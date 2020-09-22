@@ -26,7 +26,7 @@ return (a);
 }
 else if (a == c)
 {
-return (c);
+return (a);
 }
 else
 {

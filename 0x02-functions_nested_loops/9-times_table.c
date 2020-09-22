@@ -9,21 +9,31 @@ void times_table(void)
 
 	for (i = 0; i < 9; i++)
 	{
-		for (j = 0; j < 10; j++)
+		for (j = 0; j <= 10; j++)
 		{
 			step = i * j;
 			if (j == 0)
 			{
 				_putchar('0');
-				_putchar(',');
 			}
-			else if (j == 9)
+			else if (j == 10)
 			{
-				print_last_colmn(step);
+				_putchar('\n');
 			}
 			else
 			{
-				print_colmn(step);
+				_putchar(',');
+				_putchar(' ');
+				if (step >= 10)
+				{
+					_putchar(step / 10 + '0');
+
+				}
+				else
+				{
+					_putchar(' ');
+				}
+				_putchar(step % 10 + '0');
 			}
 		}
 	}

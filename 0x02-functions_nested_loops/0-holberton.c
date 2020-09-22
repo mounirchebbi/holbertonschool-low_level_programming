@@ -1,8 +1,8 @@
 #include "holberton.h"
-/** 
-  *main- entry point
-  *Return: 0 when success then exit
-  */
+/**
+ *main- entry point
+ *Return: 0 when success then exit
+ */
 int main(void)
 {
 	_putchar('H');

@@ -13,21 +13,15 @@ int main(void)
 	do {
 		a = i * 3;
 		b = i * 5;
-		if (a < 1024 && b < 1024)
+		if (b <= 1020)
 		{
 			s = s + a + b;
-			i++;
-		}
-		else if (a == 1023)
-		{
-			s = s + a;
-			i++;
 		}
 		else
 		{
 			s = s + a;
-			i++;
 		}
+		i++;
 
 	} while (i < 342);
 	printf("%d\n", s);

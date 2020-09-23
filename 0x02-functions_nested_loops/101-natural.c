@@ -15,17 +15,17 @@ int main(void)
 		b = i * 5;
 		if (a < 1024 && b < 1024)
 		{
-			s + = a + b;
+			s = s + a + b;
 			i++;
 		}
 		else if (a == 1023)
 		{
-			s + = a;
+			s = s + a;
 			i++;
 		}
 		else
 		{
-			s + = a;
+			s = s + a;
 			i++;
 		}
 

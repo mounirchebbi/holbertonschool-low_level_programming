@@ -8,22 +8,15 @@ int main(void)
 {
 	int i = 1;
 	int s = 0;
-	int a, b;
 
 	do {
-		a = i * 3;
-		b = i * 5;
-		if (b <= 1020)
+		if (i % 3 == 0 || i % 5 == 0)
 		{
-			s = s + a + b;
-		}
-		else
-		{
-			s = s + a;
+			s = s + i;
 		}
 		i++;
 
-	} while (i < 342);
+	} while (i < 1024);
 	printf("%d\n", s);
 	return (0);
 }

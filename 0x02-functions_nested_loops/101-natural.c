@@ -15,21 +15,21 @@ int main(void)
 		b = i * 5;
 		if (a < 1024 && b < 1024)
 		{
-			s+=a+b;
+			s + = a + b;
 			i++;
 		}
 		else if (a == 1023)
 		{
-			s+=a;
+			s + = a;
 			i++;
 		}
 		else
 		{
-			s+=a;
+			s + = a;
 			i++;
 		}
 
 	} while (i < 342);
-	printf("%d\n",s);
+	printf("%d\n", s);
 	return (0);
 }

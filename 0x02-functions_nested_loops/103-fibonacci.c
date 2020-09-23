@@ -16,12 +16,12 @@ int main(void)
 		n = pp + p;
 		if (n % 2 == 0)
 		{
-			s += n;
+			s = s + n;
 		}
 
 	} while (n < 4000000);
 
-	printf("%lu\n", n);
+	printf("%lu\n", s);
 	return (0);
 
 }

@@ -10,7 +10,7 @@ int main(void)
 	long int n = 3;
 	int c = 3;
 
-	printf("%ld, %ld, ", pp, p);
+	printf("%ld, %ld, %ld, ", pp, p, n);
 
 	do {
 		pp = p;

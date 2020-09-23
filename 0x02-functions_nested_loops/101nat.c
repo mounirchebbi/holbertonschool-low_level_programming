@@ -7,7 +7,6 @@
 int main(void)
 {
 	int i = 1;
-	int s = 0;
 	int a, b;
 
 	do {
@@ -15,21 +14,20 @@ int main(void)
 		b = i * 5;
 		if (a < 1024 && b < 1024)
 		{
-			s+=a+b;
+			printf("%d, %d, ", a, b);
 			i++;
 		}
 		else if (a == 1023)
 		{
-			s+=a;
+			printf("%d\n", a);
 			i++;
 		}
 		else
 		{
-			s+=a;
+			printf("%d, ", a);
 			i++;
 		}
 
 	} while (i < 342);
-	printf("%d\n",s);
 	return (0);
 }

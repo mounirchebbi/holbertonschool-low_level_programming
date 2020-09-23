@@ -8,7 +8,7 @@ int main(void)
 	long int pp = 1;
 	long int p = 2;
 	long int n = 3;
-	int c = 3;
+	int c = 4;
 
 	printf("%ld, %ld, %ld, ", pp, p, n);
 

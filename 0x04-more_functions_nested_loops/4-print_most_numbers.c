@@ -1,17 +1,15 @@
 #include "holberton.h"
 /**
-  *mul - multiplies a & b
-  *Return: result
-  *@a : first int
-  *@b : second int
+  *print_most_numbers - print numbers except 2 an 4
+  *Return: void
   */
 void print_most_numbers(void)
 {
 	int i;
 
-	for (i = 0; i <=9; i++)
+	for (i = 0; i <= 9; i++)
 	{
-		if ( i!= 2 && i!= 4)
+		if (i != 2 && i != 4)
 			_putchar(i + '0');
 	}
 	_putchar('\n');

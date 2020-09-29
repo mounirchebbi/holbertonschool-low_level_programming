@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-  *print_rev - prints in reverse
+  *rev_string - to string reversed
   *@s: pointer to string
   *Return: void
   */

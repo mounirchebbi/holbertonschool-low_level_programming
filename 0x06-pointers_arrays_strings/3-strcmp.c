@@ -16,19 +16,17 @@ int _strcmp(char *s1, char *s2)
 		if ((int) *(s1 + i) > (int) *(s2 + i))
 		{
 			stop = 1;
-			result = 15;
 		}
 		else if ((int) *(s1 + i) < (int) *(s2 + i))
 		{
 			stop = 1;
-			result = -15;
 		}
 		else if (*(s1 + i) == '\0' && *(s2 + i) == '\0')
 		{
 			stop = 1;
-			result = 0;
 		}
 		i++;
+		result = (int) *(s1 + i) - (int) *(s2 + i);
 	}
 	return (result);
 }

@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdlib.h>
 /**
   *_strchr- locate first occurance of char in string
   *@s:pointer to string

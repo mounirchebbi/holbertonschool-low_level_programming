@@ -15,10 +15,10 @@ void print_diagsums(int *a, int size)
 	for (i = 0; i < size; i++)
 	{
 		sa += *(a + (i * (size + 1)));
-		for (j = size - 1; j > 0; j--)
-		{
-			sb += *(a + (i * (size - 1)));
-		}
+	}
+	for (j = size - 1; j > 0; j--)
+	{
+		sb += *(a + (i * (size - 1)));
 	}
 	printf("%ld, %ld\n", sa, sb);
 }

@@ -12,13 +12,13 @@ void print_diagsums(int *a, int size)
 	long int sa = 0;
 	long int sb = 0;
 
-	for (i = 0; i < size; ++i)
+	for (i = 0; i < size*size; i=i+size)
 	{
-		sa += *(a + (i * (size + 1)));
+		sa += *(a + i);
 	}
-	for (j = size - 1; j > 0; --j)
+	for (j = size-1; j < size*size; j=j+size-1)
 	{
-		sb += *(a + (i * (size - 1)));
+		sb += *(a + j);
 	}
 	printf("%ld, %ld\n", sa, sb);
 }

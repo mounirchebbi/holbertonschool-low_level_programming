@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
-  *_strspn- gets the length of a prefix substring
+  *_strpbrk- locates the first occurrence
   *@s:pointer to string
   *@accept:pointer to string
-  *Return: lenght
+  *Return: pointer
   */
 char *_strpbrk(char *s, char *accept)
 {

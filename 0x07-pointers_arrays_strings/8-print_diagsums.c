@@ -12,7 +12,7 @@ void print_diagsums(int *a, int size)
 	long int sa = 0;
 	long int sb = 0;
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size; ++i)
 	{
 		sa += *(a + (i * (size + 1)));
 		sb += *(a + (i * (size - 1)));

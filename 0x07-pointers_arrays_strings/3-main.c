@@ -13,6 +13,11 @@ int main(void)
 		    unsigned int n;
 
 		        n = _strspn(s, f);
-			    printf("%u\n", n);
+			printf("%u\n", n);
+			n= _strspn("abcdef", "");
+			printf("%u\n", n);
+			
+			n= _strspn("", "abcdef");
+			printf("%u\n", n);
 			        return (0);
 }

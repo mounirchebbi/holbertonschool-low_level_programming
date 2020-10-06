@@ -12,11 +12,11 @@ void print_diagsums(int *a, int size)
 	long int sa = 0;
 	long int sb = 0;
 
-	for (i = 0; i < size*size; i=i+size)
+	for (i = 0; i < size * size; i = i + size + 1)
 	{
 		sa += *(a + i);
 	}
-	for (j = size-1; j < size*size; j=j+size-1)
+	for (j = size - 1; j < size * size - 1; j = j + size - 1)
 	{
 		sb += *(a + j);
 	}

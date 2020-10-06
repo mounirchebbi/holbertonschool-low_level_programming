@@ -14,5 +14,7 @@ int main(void)
 
 		        t = _strpbrk(s, f);
 			    printf("%s\n", t);
+			    t = _strpbrk("First, solve the problem. Then, write the code.", "[]{}()");
+			    printf("%p\n", t);
 			        return (0);
 }

@@ -1,40 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-int eval (int n)
+/**
+  *transform- calculate number of changes
+  *@change: pieces of change
+  *@n: number to change
+  *@i: step
+  *Return: number of changes
+  */
+int transform(int change[5], int n, int i)
 {
-	if (n < 1)
-		return 1;
-	return (10*eval(n-1));
+	int piece = change[i];
+
+	if (i > 5)
+		return (0);
+	return (n / piece + transform(change, n % piece, ++i));
 }
-int main (int argc, char *argv[])
+/**
+  *main- number of change
+  *@argc: arguments must be = 2
+  *@argv: argv
+  *Return: 0 when sccess
+  */
+int main(int argc, char *argv[])
 {
-	int i,k;
-	int val = 0;
-	int change[5] = {25,10,5,2,1};
-	int n=0;
-	if (argc != 1)
+	int change[5] = {25, 10, 5, 2, 1};
+	int n = 0;
+
+	if (argc != 2)
 	{
-		printf ("Error\n");
+		printf("Error\n");
 		return (1);
 	}
-	for (i=0; argv[1][i] != '\0'; i++)
-	{
-		if (isdigit(argv[1][i]))
-			n++;
-		else
-		{
-			printf("0\n");
-			return(1);
-		}
-	}
-	for (i=0; argv[1][i] != '\0'; i++)
-	{
-		k = atoi(argv[1][i]) * eval (n);
-		val += k;
-		n--;
-	}
-	printf("%d\n", val);
+	n = atoi(argv[1]);
+	if (n < 0)
+		printf("%d\n", 0);
+	printf("%d\n", transform(change, n, 0));
 	return (0);
 }
 

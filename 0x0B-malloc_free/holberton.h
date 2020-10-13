@@ -1,5 +1,3 @@
-#ifndef HEADER_FILE
-#define HEADER_FILE
 int _putchar(char c);
 void print_alphabet(void);
 void print_alphabet_x10(void);
@@ -54,4 +52,3 @@ void print_chessboard(char (*a)[8]);
 void print_diagsums(int *a, int size);
 void set_string(char **s, char *to);
 char *create_array(unsigned int size, char c);
-#endif

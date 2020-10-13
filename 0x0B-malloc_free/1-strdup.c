@@ -6,7 +6,7 @@
   *@i:initialisation
   *Return: size
   */
-int sizestr(char *str, int i)
+int sizestr(char *str, unsigned int i)
 {
 	if (*(str + i) == '\0')
 		return (0);
@@ -19,14 +19,15 @@ int sizestr(char *str, int i)
   */
 char *_strdup(char *str)
 {
-	int n, i;
+	unsigned int n;
+	int i;
 	char *p;
 
 	if (str == NULL)
 		return (NULL);
 	n = sizestr(str, 0);
 	p = malloc(sizeof(char) * n);
-	if (p == 0)
+	if (p == NULL)
 		return (NULL);
 	for (i = 0; i < n; i++)
 		p[i] = str[i];

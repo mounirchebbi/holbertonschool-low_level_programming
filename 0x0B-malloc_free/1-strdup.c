@@ -6,7 +6,7 @@
   *@i:initialisation
   *Return: size
   */
-unsigned int sizestr(char *str, int i)
+int sizestr(char *str, int i)
 {
 	if (*(str + i) == '\0')
 		return (0);
@@ -19,7 +19,7 @@ unsigned int sizestr(char *str, int i)
   */
 char *_strdup(char *str)
 {
-	unsigned int n;
+	int n;
 	int i;
 	char *p;
 

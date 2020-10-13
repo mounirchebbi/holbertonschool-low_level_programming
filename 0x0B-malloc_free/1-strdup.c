@@ -6,7 +6,7 @@
   *@i:initialisation
   *Return: size
   */
-int sizestr(char *str, unsigned int i)
+unsigned int sizestr(char *str, int i)
 {
 	if (*(str + i) == '\0')
 		return (0);

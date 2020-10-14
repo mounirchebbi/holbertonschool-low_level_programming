@@ -1,36 +1,35 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
-  *sizestr- size of char
+  *stringsize - size of string
   *@str: string
-  *@i:initialisation
+  *@i: initialization
   *Return: size
   */
-int sizestr(char *str, int i)
+int stringsize(char *str, int i)
 {
-	if (*(str + i) == '\0')
+	if (str[i] == '\0')
 		return (0);
-	return (1 + sizestr(str, ++i));
+	return (1 + stringsize(str, ++i));
 }
 /**
-  *_strdup- duplicate string
-  *@str: string to duplicate
+  *_strdup - duplicate string
+  *@str: string
   *Return: duplicated string
   */
 char *_strdup(char *str)
 {
-	int n;
-	int i;
-	char *p;
+	int n, i;
+	char *str2;
 
 	if (str == NULL)
 		return (NULL);
-	n = sizestr(str, 0);
-	p = malloc(sizeof(char) * n);
-	if (p == NULL)
+	n = stringsize(str, 0);
+	str2 = malloc(sizeof(char) * n);
+	if (str2 == NULL)
 		return (NULL);
-	for (i = 0; i < n; i++)
-		p[i] = str[i];
-	p[i] = '\0';
-	return (p);
+	for (i = 0; str[i] != '\0'; i++)
+		str2[i] = str[i];
+	str2[i] = '\0';
+	return (str2);
 }

@@ -53,7 +53,7 @@ char **strtow(char *str)
 		if ((j == 0 && str[j] != ' ') || (str[j - 1] == ' ' && str[j] != ' '))
 		{
 			size = sized(str, j);
-			out[i] = malloc(sizeof(char) * size);
+			out[i] = malloc(sizeof(char) * (size+1));
 			for (k = 0; k < size; k++)
 				out[i][k] = str[j + k];
 				out[i][k] = '\0';

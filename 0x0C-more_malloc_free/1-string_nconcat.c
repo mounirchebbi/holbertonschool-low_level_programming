@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
 /**
   *sized- size of string
@@ -23,37 +23,30 @@ int sized(char *str, int i)
   */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i, n1, n2;
+	int i, j, n1, n2;
 	char *out;
-	char *clone;
-	int n3 = (int) n;
 
 	if (s2 == NULL && s1 == NULL)
 		return (NULL);
-	else if (s2 == NULL || n <= 0)
-		return (s1);
 	n1 = sized(s1, 0);
 	n2 = sized(s2, 0);
-	clone = malloc(sizeof(char) * n1 + 1);
-	if (clone == NULL)
-		return (NULL);
-	for (i = 0; i < n1; i++)
-		clone[i] = s1[i];
-	clone[i] = '\0';
-	out = realloc(clone, n+1);
-	if (out == NULL)
-		return (NULL);
-	if (n2 <= n3)
+	if ((int)n >= n2)
 	{
-		for (i = 0; i < n2; i++)
-			out[n1 + i] = s2[i];
-		out[n1 + i] = '\0';
+		out = malloc(sizeof(char) * (n1 + n2 + 1));
+		for (i = 0; i < n1; i++)
+			out[i] = s1[i];
+		for (j = 0; j < n2; j++)
+			out[i + j] = s2[j];
+		out[i + j] = '\0';
 	}
 	else
 	{
-		for (i = 0; i < n3; i++)
-			out[n1 + i] = s2[i];
-		out[n1 + i] = '\0';
+		out = malloc(sizeof(char) * (n1 + (int)n + 1));
+		for (i = 0; i < n1; i++)
+			out[i] = s1[i];
+		for (j = 0; j < (int)n; j++)
+			out[i + j] = s2[j];
+		out[i + j] = '\0';
 	}
-return (out);
+	return (out);
 }

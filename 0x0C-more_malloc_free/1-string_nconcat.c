@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 #include <stdlib.h>
 /**
   *sized- size of string

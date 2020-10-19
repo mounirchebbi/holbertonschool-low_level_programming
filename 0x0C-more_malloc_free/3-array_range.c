@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+#include <stdlib.h>
 /**
   *array_range - arry of int
   *@min: minimum value
@@ -15,6 +15,8 @@ int *array_range(int min, int max)
 		return (NULL);
 	size = max - min;
 	arr = malloc(sizeof(int) * size);
+	if (arr == NULL)
+		return (NULL);
 	if (size == 0)
 		arr[0] = min;
 	else

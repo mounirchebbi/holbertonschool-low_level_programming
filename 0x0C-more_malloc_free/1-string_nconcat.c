@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < n1; i++)
 		clone[i] = s1[i];
 	clone[i] = '\0';
-	out = realloc(clone, n);
+	out = realloc(clone, n+1);
 	if (out == NULL)
 		return (NULL);
 	if (n2 <= n3)

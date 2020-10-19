@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
-  *_calloc: creates array of nmemb
+  *_calloc - creates array of nmemb
   *@nmemb: int
   *@size: int
   *Return: pointer to array

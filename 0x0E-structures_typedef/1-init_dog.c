@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include "dog.h"
 /**
   *init_dog - initialisation

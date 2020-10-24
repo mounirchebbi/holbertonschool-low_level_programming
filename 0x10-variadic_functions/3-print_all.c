@@ -1,14 +1,11 @@
 #include "variadic_functions.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 /**
   *print_all - prints all arguments following format order
   *@format: format
   */
 void print_all(const char * const format, ...)
 {
-	int i= 0, j= 0;
+	int i, j;
 	va_list lst;
 	void *arg;
 	char *spacer = "";

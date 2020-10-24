@@ -19,10 +19,19 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		num = va_arg(lst, int);
 		if (separator)
 			printf("%d%s", num, separator);
-		else if (separator == NULL)
-			printf("%d", num);
+		/*
+		 *else if (separator == NULL)
+			printf("%d", num);*
+		 */
 	}
-	num = va_arg(lst, int);
-	printf("%d\n", num);
+	if (separator)
+	{
+		num = va_arg(lst, int);
+		printf("%d\n", num);
+	}
+	else
+	{
+		printf("\n");
+	}
 	va_end(lst);
 }

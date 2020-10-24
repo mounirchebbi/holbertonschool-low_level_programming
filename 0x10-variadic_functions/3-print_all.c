@@ -35,6 +35,8 @@ void print_all(const char * const format, ...)
 				 *if ((arg == NULL) && (spf[j].a[0] == 's'))
 				 *	printf("%p", arg);
 				 */
+				if ((arg == NULL) && (spf[j].a[0] == 's'))
+					arg = "(nil)";
 				printf(spf[j].b, arg);
 				spacer = ", ";
 			}

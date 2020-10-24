@@ -29,9 +29,5 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		num = va_arg(lst, int);
 		printf("%d\n", num);
 	}
-	else
-	{
-		printf("\n");
-	}
 	va_end(lst);
 }

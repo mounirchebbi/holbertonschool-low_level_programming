@@ -30,11 +30,11 @@ void print_all(const char * const format, ...)
 			if (spf[j].a[0] == format[i])
 			{
 				printf("%s", spacer);
+				spacer = ", ";
 				arg = va_arg(lst, void*);
 				if ((arg == NULL) && (spf[j].a[0] == 's'))
 					printf("%p", spf[j].a);
 				printf(spf[j].b, arg);
-				spacer = ", ";
 			}
 			j++;
 		}

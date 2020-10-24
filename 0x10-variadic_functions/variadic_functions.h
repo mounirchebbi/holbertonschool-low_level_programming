@@ -1,8 +1,5 @@
 #ifndef VARIADIC_HEADER
 #define VARIADIC_HEADER
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 /**
   *struct specifiers - %specifiers of format
   *@a: %specifier

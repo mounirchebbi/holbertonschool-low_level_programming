@@ -1,4 +1,8 @@
 #include "variadic_functions.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
 /**
   *print_all - prints all arguments following format order
   *@format: format
@@ -28,12 +32,8 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", spacer);
 				arg = va_arg(lst, void*);
-				/**
-				 *if ((arg == NULL) && (spf[j].a[0] == 's'))
-				 *	printf("%p", arg);
-				 */
 				if ((arg == NULL) && (spf[j].a[0] == 's'))
-					arg = "(nil)";
+					printf("%p", arg);
 				printf(spf[j].b, arg);
 				spacer = ", ";
 			}

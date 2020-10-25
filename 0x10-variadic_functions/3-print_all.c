@@ -8,7 +8,7 @@
   */
 void print_all(const char * const format, ...)
 {
-	int i, j;
+	unsigned int i, j;
 	va_list lst;
 	void *arg;
 	char *spacer = "";
@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 
 	va_start(lst, format);
 	i = 0;
-	while (format[i]!='\0' && format)
+	while (format[i] != '\0' && format)
 	{
 		j = 0;
 		while (spf[j].a != NULL)

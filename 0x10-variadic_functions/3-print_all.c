@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 
 	va_start(lst, format);
 	i = 0;
-	while (format[i] != '\0' && format)
+	while (format[i] && format)
 	{
 		j = 0;
 		while (spf[j].a != NULL)

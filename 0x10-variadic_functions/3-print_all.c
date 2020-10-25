@@ -8,7 +8,7 @@
   */
 void print_all(const char * const format, ...)
 {
-	unsigned int i, j;
+	int i, j;
 	va_list lst;
 	void *arg;
 	char *spacer = "";

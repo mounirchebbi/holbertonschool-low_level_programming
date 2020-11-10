@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int main(void)
 {
-	int i;
+	/*int i;
 
 	for (i=0 ;i < 100; i++)
 	{
@@ -10,5 +10,8 @@ int main(void)
 		printf("i<<1 : %d\n", i<<1);
 		printf("*************************************************************\n");
 	}
+	return 0;*/
+	int a = sizeof(char);
+	printf("%d\n", a);
 	return 0;
 }

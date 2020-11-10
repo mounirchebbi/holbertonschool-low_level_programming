@@ -35,13 +35,10 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[i] < 48 || b[i] > 49)
 			return (0);
-		else
-		{
-			if (b[i] == '1')
-				sum += power_two(size);
-			size--;
-			i++;
-		}
+		if (b[i] == '1')
+			sum += power_two(size);
+		size--;
+		i++;
 	}
 	return (sum);
 }

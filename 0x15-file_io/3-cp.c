@@ -52,7 +52,8 @@ int main(int argc, char *argv[])
 	fd_out = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	buffer = allocate_buffer(argv[2]);
 	r = read(fd_in, buffer, 1024);
-	do {
+	while (r > -1)
+	{
 		if (fd_in == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -68,7 +69,7 @@ int main(int argc, char *argv[])
 		}
 		r = read(fd_out, buffer, 1024);
 		fd_out = open(argv[2], O_WRONLY | O_APPEND);
-	} while (r != -1);
+	}
 	free(buffer);
 	close_file(fd_in);
 	close_file(fd_out);

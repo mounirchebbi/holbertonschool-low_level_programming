@@ -84,13 +84,14 @@ int main(int argc, char *argv[])
 	fd_out = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	r = read(fd_in, buffer, 1024);
 	check_read(fd_in, r, buffer, argv[2]);
-	do {
+	while (r > 0)
+	{
 		w = write(fd_out, buffer, r);
 		check_write(w, buffer, argv[2]);
 		r = read(fd_in, buffer, 1024);
 		check_read(fd_in, r, buffer, argv[2]);
 		fd_out = open(argv[2], O_WRONLY | O_APPEND);
-	} while (r > 0);
+	}
 	free(buffer);
 	close_file(fd_in);
 	close_file(fd_out);

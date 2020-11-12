@@ -17,13 +17,14 @@ void check_read(int fd_in, int r, char *buffer, char *file)
 }
 /**
   *check_write - check write return value
+  *@fd_out: file descriptor
   *@w: write return value
   *@buffer: buffer
   *@file : file
   */
-void check_write(int w, char *buffer, char *file)
+void check_write(int fd_out, int w, char *buffer, char *file)
 {
-	if (w == -1)
+	if (fd_out == -1 || w == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 		free(buffer);
@@ -87,7 +88,7 @@ int main(int argc, char *argv[])
 	while (r > 0)
 	{
 		w = write(fd_out, buffer, r);
-		check_write(w, buffer, argv[2]);
+		check_write(fd_out, w, buffer, argv[2]);
 		r = read(fd_in, buffer, 1024);
 		check_read(fd_in, r, buffer, argv[2]);
 		fd_out = open(argv[2], O_WRONLY | O_APPEND);

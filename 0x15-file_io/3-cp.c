@@ -1,13 +1,14 @@
 #include "holberton.h"
 /**
   * check_read - check read return value
+  * @fd_in : file descriptor
   * @r: read return value
   * @buffer: buffer
   * @file : file
   */
-void check_read(int r, char *buffer, char *file)
+void check_read(int fd_in, int r, char *buffer, char *file)
 {
-	if (r == -1)
+	if (fd_in == -1 || r == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 		free(buffer);
@@ -82,13 +83,13 @@ int main(int argc, char *argv[])
 	fd_in = open(argv[1], O_RDONLY);
 	fd_out = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	r = read(fd_in, buffer, 1024);
-	check_read(r, buffer, argv[2]);
+	check_read(fd_in, r, buffer, argv[2]);
 	while (r > 0)
 	{
 		w = write(fd_out, buffer, r);
 		check_write(w, buffer, argv[2]);
 		r = read(fd_in, buffer, 1024);
-		check_read(r, buffer, argv[2]);
+		check_read(fd_in, r, buffer, argv[2]);
 		fd_out = open(argv[2], O_WRONLY | O_APPEND);
 	}
 	free(buffer);

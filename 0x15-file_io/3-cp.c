@@ -81,9 +81,9 @@ int main(int argc, char *argv[])
 	}
 	buffer = allocate_buffer(argv[2]);
 	fd_in = open(argv[1], O_RDONLY);
-	fd_out = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	r = read(fd_in, buffer, 1024);
 	check_read(fd_in, r, buffer, argv[2]);
+	fd_out = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	while (r > 0)
 	{
 		w = write(fd_out, buffer, r);

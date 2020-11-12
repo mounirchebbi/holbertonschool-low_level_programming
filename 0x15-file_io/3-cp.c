@@ -50,9 +50,9 @@ int main(int argc, char *argv[])
 	}
 	buffer = allocate_buffer(argv[2]);
 	fd_in = open(argv[1], O_RDONLY);
+	fd_out = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	r = read(fd_in, buffer, 1024);
-	fd_out = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	while (r != -1)
+	while (r > 0)
 	{
 		if (fd_in == -1 || r == -1)
 		{
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 			free(buffer);
 			exit(99);
 		}
-		r = read(fd_out, buffer, 1024);
+		r = read(fd_in, buffer, 1024);
 		fd_out = open(argv[2], O_WRONLY | O_APPEND);
 	}
 	free(buffer);

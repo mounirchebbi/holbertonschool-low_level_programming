@@ -6,11 +6,11 @@
 *@n: data
 *Return: list
 */
-dlistint_s *insert_dnodeint_at_index(dlistint_s **h, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_s *temp;
-	dlistint_s *node;
-	dlistint_s *previous;
+	dlistint_t *temp;
+	dlistint_t *node;
+	dlistint_t *previous;
 	unsigned int pos = 0;
 
 	if (*h == NULL)
@@ -32,7 +32,7 @@ dlistint_s *insert_dnodeint_at_index(dlistint_s **h, unsigned int idx, int n)
 	{
 		temp = *h;
 		pos = 0;
-		node = malloc(sizeof(dlistint_s));
+		node = malloc(sizeof(dlistint_t));
 		node->n = n;
 		while (pos < idx)
 		{

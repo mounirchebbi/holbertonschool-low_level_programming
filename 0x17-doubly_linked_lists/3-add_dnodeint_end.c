@@ -5,12 +5,12 @@
 *@n: data
 *Return: double linked list
 */
-dlistint_s *add_dnodeint_end(dlistint_s **head, const int n)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_s *node;
-	dlistint_s *temp;
+	dlistint_t *node;
+	dlistint_t *temp;
 
-	node = malloc(sizeof(dlistint_s));
+	node = malloc(sizeof(dlistint_t));
 	node->n = n;
 	node->next = NULL;
 	if (*head == NULL)

@@ -5,10 +5,10 @@
 *@index: index of node
 *Return: node
 */
-dlistint_s *get_dnodeint_at_index(dlistint_s *head, unsigned int index)
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int i = 0;
-	dlistint_s *temp;
+	dlistint_t *temp;
 
 	if (head == NULL)
 		return (NULL);

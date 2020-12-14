@@ -3,9 +3,9 @@
 *free_dlistint - free list
 *@head: head of list
 */
-void free_dlistint(dlistint_s *head)
+void free_dlistint(dlistint_t *head)
 {
-	dlistint_s *temp;
+	dlistint_t *temp;
 
 	while (head)
 	{

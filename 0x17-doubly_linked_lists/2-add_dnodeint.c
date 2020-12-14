@@ -5,11 +5,11 @@
 *@n: data
 *Return: list
 */
-dlistint_s *add_dnodeint(dlistint_s **head, const int n)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_s *node;
+	dlistint_t *node;
 
-	node = malloc(sizeof(dlistint_s));
+	node = malloc(sizeof(dlistint_t));
 	node->n = n;
 	node->prev = NULL;
 	node->next = *head;

@@ -4,9 +4,9 @@
 *@head: head of list
 *Return: sum
 */
-int sum_dlistint(dlistint_s *head)
+int sum_dlistint(dlistint_t *head)
 {
-	dlistint_s *temp;
+	dlistint_t *temp;
 	int sum = 0;
 
 	if (head == NULL)
